@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Book your next dream trip with JetAway. Explore top destinations, compare packages, and enjoy seamless booking.">
+  <title>JetAway - Book Your Next Dream Trip</title>
+  <!-- Favicon placeholder, replace with your actual favicon -->
+  <link rel="icon" href="https://placehold.co/32x32/60a5fa/ffffff?text=JA">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+      <div class="navbar-container">
+        <!-- Left: Logo -->
+        <div class="navbar-left">
+          <a href="#" class="logo" aria-label="JetAway Home">JetAway</a>
+        </div>
+        <!-- Center: Nav Links -->
+        <div class="navbar-center">
+          <a href="#home" class="nav-link active" aria-current="page">Home</a>
+          <a href="#destinations" class="nav-link">Destinations</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#map" class="nav-link">Contact</a>
+        </div>
+        <!-- Right: Night Mode & Get Off -->
+        <div class="navbar-right">
+          <button id="darkModeBtn" aria-label="Toggle night mode" class="nav-btn night-toggle">🌙</button>
+          <button class="nav-btn notification-btn" aria-label="Notifications">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#60a5fa" xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true">
+              <path
+                d="M12 2C11.45 2 11 2.45 11 3V3.1C7.6 3.56 5 6.47 5 10V16L3 18V19H21V18L19 16V10C19 6.47 16.4 3.56 13 3.1V3C13 2.45 12.55 2 12 2ZM12 22C13.1 22 14 21.1 14 20H10C10 21.1 10.9 22 12 22Z" />
+            </svg>
+
+          </button>
+          <button class="nav-btn getoff-btn">Login</button>
+        </div>
+        <!-- Hamburger for mobile -->
+        <button class="navbar-burger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <!-- Mobile Navigation Menu -->
+      <div class="navbar-menu">
+        <a href="#home" class="nav-link active" aria-current="page">Home</a>
+        <a href="#destinations" class="nav-link">Destinations</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#map" class="nav-link">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Hero/Home Section -->
+  <section id="home">
+    <!-- Hero Section (existing content) -->
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Book Your Next Dream Trip</h1>
+        <p>Discover, compare, and book unforgettable adventures with JetAway.</p>
+        <form class="search-bar" aria-label="Trip Search">
+          <input type="text" placeholder="Destination" aria-label="Destination" required>
+          <input type="date" aria-label="Departure Date" required>
+          <input type="date" aria-label="Return Date" required>
+          <select aria-label="Travelers" required>
+            <option>1 Adult</option>
+            <option>2 Adults</option>
+            <option>Family (2+2)</option>
+            <option>Group (5+)</option>
+          </select>
+          <button type="submit">Search</button>
+        </form>
+      </div>
+      <style>
+        /* Inline styles for hero background to allow dynamic change based on dark mode */
+        .hero {
+          background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+        }
+
+        body.dark .hero {
+          background: url('https://images.unsplash.com/photo-1465156799763-2c087c332922?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+        }
+      </style>
+    </section>
+  </section>
+
+
+  <!-- Top Destinations -->
+  <section class="container section" id="destinations">
+    <h2>Top Destinations</h2>
+    <!-- Tabs Filter -->
+    <div class="tabs-filter">
+      <button class="tab-btn active" data-filter="all">All</button>
+      <button class="tab-btn" data-filter="beach">Beach</button>
+      <button class="tab-btn" data-filter="city">City</button>
+      <button class="tab-btn" data-filter="adventure">Adventure</button>
+      <button class="tab-btn" data-filter="family">Family</button>
+      <button class="tab-btn" data-filter="hot">Hot</button>
+      <button class="tab-btn" data-filter="top">Top</button>
+    </div>
+    <div class="destinations-grid enhanced-destinations-grid">
+      <div class="destination-card enhanced-card" data-type="city">
+        <span class="card-chip chip-new">New</span>
+        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&q=80"
+          alt="Paris, France - Eiffel Tower at sunset" class="card-img">
+        <div class="card-content">
+          <h3>Paris, France</h3>
+          <div class="price-rating">
+            <span class="price">$799</span>
+            <span class="stars">★★★★☆</span>
+          </div>
+          <p>Romantic getaways, iconic sights, gourmet cuisine.</p>
+          <button>View Details</button>
+        </div>
+      </div>
+      <div class="destination-card enhanced-card" data-type="beach">
+        <span class="card-chip chip-best">Best</span>
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80"
+          alt="Bali, Indonesia - Beach and palm trees" class="card-img">
+        <div class="card-content">
+          <h3>Bali, Indonesia</h3>
+          <div class="price-rating">
+            <span class="price">$599</span>
+            <span class="stars">★★★★★</span>
+          </div>
+          <p>Tropical beaches, surfing, vibrant culture.</p>
+          <button>View Details</button>
+        </div>
+      </div>
+      <div class="destination-card enhanced-card" data-type="adventure">
+        <span class="card-chip chip-sale">Sale</span>
+        <img
+          src="https://media.cntraveler.com/photos/655cdf1d2d09a7e0b27741b5/16:9/w_1600,c_limit/Cairo%20Egypt_GettyImages-1370918272.jpg"
+          alt="Cairo, Egypt - Pyramids of Giza" class="card-img">
+        <div class="card-content">
+          <h3>Cairo, Egypt</h3>
+          <div class="price-rating">
+            <span class="price">$499</span>
+            <span class="stars">★★★★☆</span>
+          </div>
+          <p>Ancient wonders, Nile cruises, bustling bazaars.</p>
+          <button>View Details</button>
+        </div>
+      </div>
+      <div class="destination-card enhanced-card" data-type="family">
+        <span class="card-chip chip-family">Family</span>
+        <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=600&q=80"
+          alt="Orlando, USA - Theme park fun" class="card-img">
+        <div class="card-content">
+          <h3>Orlando, USA</h3>
+          <div class="price-rating">
+            <span class="price">$899</span>
+            <span class="stars">★★★★★</span>
+          </div>
+          <p>Theme parks, family fun, world-class entertainment.</p>
+          <button>View Details</button>
+        </div>
+      </div>
+      <div class="destination-card enhanced-card" data-type="hot">
+        <span class="card-chip chip-hot">Hot</span>
+        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80"
+          alt="Dubai, UAE - Modern cityscape" class="card-img">
+        <div class="card-content">
+          <h3>Dubai, UAE</h3>
+          <div class="price-rating">
+            <span class="price">$1099</span>
+            <span class="stars">★★★★★</span>
+          </div>
+          <p>Luxury shopping, desert adventures, iconic skyline.</p>
+          <button>View Details</button>
+        </div>
+      </div>
+      <div class="destination-card enhanced-card" data-type="top">
+        <span class="card-chip chip-top">Top</span>
+        <img src="https://images.pexels.com/photos/532263/pexels-photo-532263.jpeg" alt="Rome, Italy - Colosseum"
+          class="card-img">
+        <div class="card-content">
+          <h3>Rome, Italy</h3>
+          <div class="price-rating">
+            <span class="price">$849</span>
+            <span class="stars">★★★★☆</span>
+          </div>
+          <p>Ancient ruins, art, and delicious cuisine.</p>
+          <button>View Details</button>
+        </div>
+      </div>
+    </div>
+    <div class="price-filter">
+      <label for="priceRange">Filter by price:</label>
+      <input type="range" id="priceRange" min="300" max="1000" step="50">
+      <span id="priceValue">$1000</span>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section how-it-works" id="how">
+    <h2>How It Works</h2>
+    <div class="steps professional-steps">
+      <div class="step-card">
+        <div class="step-icon step-gradient"><img src="https://img.icons8.com/ios-filled/50/ffffff/search--v1.png"
+            alt="Browse Icon" width="32" height="32"></div>
+        <h3>Browse</h3>
+        <p>Explore top destinations and exclusive offers with our intuitive search and filter tools.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-icon step-gradient"><img src="https://img.icons8.com/ios-filled/50/ffffff/compare.png"
+            alt="Choose Icon" width="32" height="32"></div>
+        <h3>Choose</h3>
+        <p>Compare packages, read verified reviews, and select your perfect trip with confidence.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-icon step-gradient"><img
+            src="https://img.icons8.com/ios-filled/50/ffffff/airplane-take-off.png" alt="Book Icon" width="32"
+            height="32"></div>
+        <h3>Book</h3>
+        <p>Book easily and securely in just a few clicks, with instant confirmation and support.</p>
+      </div>
+    </div>
+    <style>
+      /* Inline styles from original HTML for .professional-steps */
+      .professional-steps {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        justify-content: center;
+      }
+
+      @media (min-width: 700px) {
+        .professional-steps {
+          flex-direction: row;
+        }
+      }
+
+      .step-card {
+        background: #fff;
+        border-radius: 14px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
+        padding: 2rem 1.5rem 1.5rem 1.5rem;
+        text-align: center;
+        max-width: 320px;
+        min-width: 220px;
+        transition: box-shadow 0.2s, transform 0.2s;
+        position: relative;
+      }
+
+      .step-card:hover {
+        box-shadow: 0 8px 32px rgba(96, 165, 250, 0.18);
+        transform: translateY(-6px) scale(1.03);
+      }
+
+      .step-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 64px;
+        height: 64px;
+        margin: 0 auto 1rem auto;
+        border-radius: 50%;
+        background: #60a5fa;
+        box-shadow: 0 2px 8px rgba(96, 165, 250, 0.18);
+      }
+
+      .step-gradient {
+        background: linear-gradient(135deg, #60a5fa 0%, #ff6f61 100%);
+      }
+
+      .step-card h3 {
+        margin: 0.5rem 0 0.5rem 0;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #2563eb;
+      }
+
+      .step-card p {
+        color: #555;
+        font-size: 1rem;
+      }
+
+      body.dark .step-card {
+        background: #23232b;
+        color: #f3f4f6;
+      }
+
+      body.dark .step-card p {
+        color: #d1d5db;
+      }
+    </style>
+  </section>
+
+  <!-- Why Choose JetAway -->
+  <section class="container section" id="why">
+    <h2>Why Choose JetAway?</h2>
+    <div class="features stylish-features">
+      <div class="feature-card">
+        <div class="feature-icon feature-gradient"><img src="https://img.icons8.com/ios-filled/50/ffffff/help--v1.png"
+            alt="Support Icon" width="32" height="32"></div>
+        <h3>24/7 Support</h3>
+        <p>Always here to help, anytime, anywhere.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon feature-gradient"><img
+            src="https://img.icons8.com/ios-filled/50/ffffff/price-tag-euro.png" alt="Price Icon" width="32"
+            height="32"></div>
+        <h3>Best Price Guarantee</h3>
+        <p>Unbeatable prices, no hidden fees.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon feature-gradient"><img src="https://img.icons8.com/ios-filled/50/ffffff/star--v1.png"
+            alt="Reviews Icon" width="32" height="32"></div>
+        <h3>Verified Reviews</h3>
+        <p>Real reviews from real travelers.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon feature-gradient"><img src="https://img.icons8.com/ios-filled/50/ffffff/lock-2.png"
+            alt="Secure Icon" width="32" height="32"></div>
+        <h3>Secure Payments</h3>
+        <p>Your data and payments are protected.</p>
+      </div>
+    </div>
+    <style>
+      /* Inline styles from original HTML for .stylish-features */
+      .stylish-features {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      @media (min-width: 700px) {
+        .stylish-features {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+
+      .feature-card {
+        background: linear-gradient(135deg, #f5f5dc 0%, #e0f2fe 100%);
+        border-radius: 14px;
+        box-shadow: 0 4px 24px rgba(96, 165, 250, 0.10);
+        padding: 2rem 1.5rem 1.5rem 1.5rem;
+        text-align: center;
+        transition: box-shadow 0.2s, transform 0.2s;
+        position: relative;
+      }
+
+      .feature-card:hover {
+        box-shadow: 0 8px 32px rgba(96, 165, 250, 0.18);
+        transform: translateY(-6px) scale(1.03);
+      }
+
+      .feature-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 64px;
+        height: 64px;
+        margin: 0 auto 1rem auto;
+        border-radius: 50%;
+        background: #60a5fa;
+        box-shadow: 0 2px 8px rgba(96, 165, 250, 0.18);
+      }
+
+      .feature-gradient {
+        background: linear-gradient(135deg, #60a5fa 0%, #ff6f61 100%);
+      }
+
+      .feature-card h3 {
+        margin: 0.5rem 0 0.5rem 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #2563eb;
+      }
+
+      .feature-card p {
+        color: #555;
+        font-size: 1rem;
+      }
+
+      body.dark .feature-card {
+        background: linear-gradient(135deg, #23232b 0%, #18181b 100%);
+        color: #f3f4f6;
+      }
+
+      body.dark .feature-card p {
+        color: #d1d5db;
+      }
+    </style>
+  </section>
+
+  <!-- Customer Testimonials -->
+  <section class="section testimonials" id="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonials-cards stylish-testimonials">
+      <div class="testimonial-card testimonial-stylish">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ahmed K.">
+        <h3>Ahmed K.</h3>
+        <div class="stars stars-highlight">★★★★☆</div>
+        <p>Great deals and amazing support. Will book again!</p>
+      </div>
+      <div class="testimonial-card testimonial-stylish">
+        <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="John D.">
+        <h3>John D.</h3>
+        <div class="stars stars-highlight">★★★★★</div>
+        <p>Unforgettable adventure! The best travel service I've used.</p>
+      </div>
+      <div class="testimonial-card testimonial-stylish">
+        <img src="https://randomuser.me/api/portraits/men/77.jpg" alt="Carlos M.">
+        <h3>Carlos M.</h3>
+        <div class="stars stars-highlight">★★★★★</div>
+        <p>JetAway exceeded my expectations. Highly recommended!</p>
+      </div>
+      <div class="testimonial-card testimonial-stylish">
+        <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="Mike S.">
+        <h3>Mike S.</h3>
+        <div class="stars stars-highlight">★★★★★</div>
+        <p>Superb support and amazing destinations. Will recommend to friends!</p>
+      </div>
+    </div>
+    <style>
+      /* Inline styles from original HTML for .stylish-testimonials */
+      .stylish-testimonials {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2rem;
+      }
+
+      @media (min-width: 700px) {
+        .stylish-testimonials {
+          flex-direction: row;
+        }
+      }
+
+      .testimonial-stylish {
+        background: linear-gradient(135deg, #e0f2fe 0%, #f5f5dc 100%);
+        border-radius: 14px;
+        box-shadow: 0 4px 24px rgba(96, 165, 250, 0.10);
+        padding: 2rem 1.5rem 1.5rem 1.5rem;
+        text-align: center;
+        max-width: 320px;
+        min-width: 220px;
+        transition: box-shadow 0.2s, transform 0.2s;
+        position: relative;
+      }
+
+      .testimonial-stylish:hover {
+        box-shadow: 0 8px 32px rgba(96, 165, 250, 0.18);
+        transform: translateY(-6px) scale(1.03);
+      }
+
+      .stars-highlight {
+        color: #ffb300;
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        letter-spacing: 0.1em;
+        font-weight: bold;
+        text-shadow: 0 2px 8px rgba(255, 179, 0, 0.10);
+      }
+
+      body.dark .testimonial-stylish {
+        background: linear-gradient(135deg, #23232b 0%, #18181b 100%);
+        color: #f3f4f6;
+      }
+
+      body.dark .testimonial-stylish p {
+        color: #d1d5db;
+      }
+    </style>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="container section newsletter" id="newsletter">
+    <div class="newsletter-box newsletter-texture">
+      <div>
+        <h2>Get 10% Off Your First Booking!</h2>
+        <p>Sign up for our newsletter and receive exclusive offers.</p>
+      </div>
+      <form class="newsletter-form" aria-label="Newsletter Signup">
+        <input type="email" placeholder="Your email" aria-label="Email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <h2>About JetAway</h2>
+      <p>JetAway is your trusted travel partner, dedicated to making your dream trips a reality with the best deals,
+        real reviews, and seamless booking experiences. Our mission is to connect you with the world’s most exciting
+        destinations, curated adventures, and unforgettable memories.</p>
+    </div>
+  </section>
+
+  <!-- Google Maps -->
+  <section class="container section" id="map">
+    <h2>Explore Popular Destinations</h2>
+    <div class="map-contact-grid">
+      <form class="contact-form">
+        <h3>Contact Us</h3>
+        <label for="contact-name">Name</label>
+        <input type="text" id="contact-name" name="name" placeholder="Your Name" required>
+        <label for="contact-email">Email</label>
+        <input type="email" id="contact-email" name="email" placeholder="Your Email" required>
+        <label for="contact-message">Message</label>
+        <textarea id="contact-message" name="message" placeholder="How can we help you?" rows="4" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div class="map-box">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.010073289889!2d31.13130231511541!3d30.02188098188909!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa60e2e7c0b%3A0x7b6b1b1b1b1b1b1b!2sPyramids%20of%20Giza!5e0!3m2!1sen!2seg!4v1680000000000!5m2!1sen!2seg"
+          width="100%" height="400" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Popular Destinations Map" aria-label="Popular Destinations Map"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Up Arrow Button -->
+  <button id="toTopBtn" aria-label="Scroll to top" class="to-top-btn" style="display:none;">
+    ↑
+  </button>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer new-footer-layout">
+      <div class="footer-col footer-brand">
+        <a href="#" class="logo">JetAway</a>
+        <div class="footer-app-promo">
+          <div class="footer-app-heading">Download Our App</div>
+          <div class="app-badges online-badges">
+            <a href="#" aria-label="Google Play" class="app-badge-icon">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                alt="Get it on Google Play" style="height:38px; width:auto;" />
+            </a>
+            <a href="#" aria-label="App Store" class="app-badge-icon">
+              <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                alt="Download on the App Store" style="height:38px; width:auto;" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-col footer-links-col">
+        <div class="footer-links">
+          <a href="#about">About Us</a>
+          <a href="#faqs">FAQs</a>
+          <a href="#terms">Terms</a>
+          <a href="#map">Contact</a> <!-- Changed to #map as per HTML structure -->
+        </div>
+        <div class="footer-socials-row footer-socials-center">
+          <a href="#" aria-label="Facebook" class="footer-social-icon">
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="16" fill="#1877F3" />
+              <path
+                d="M21 16.5H18.5V25H15V16.5H13V14H15V12.5C15 10.57 16.07 9 18.5 9H21V11.5H19.5C18.67 11.5 18.5 11.83 18.5 12.5V14H21L20.5 16.5Z"
+                fill="white" />
+            </svg>
+          </a>
+          <a href="#" aria-label="Instagram" class="footer-social-icon">
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <radialGradient id="ig-gradient" cx="0.5" cy="0.5" r="0.7">
+                <stop offset="0%" stop-color="#f9ce34" />
+                <stop offset="50%" stop-color="#ee2a7b" />
+                <stop offset="100%" stop-color="#6228d7" />
+              </radialGradient>
+              <circle cx="16" cy="16" r="16" fill="url(#ig-gradient)" />
+              <rect x="10" y="10" width="12" height="12" rx="6" fill="white" />
+              <circle cx="16" cy="16" r="4" fill="#ee2a7b" />
+              <circle cx="22" cy="10" r="1" fill="#ee2a7b" />
+            </svg>
+          </a>
+          <a href="#" aria-label="Twitter" class="footer-social-icon">
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="16" fill="#1DA1F2" />
+              <path
+                d="M25 12.3c-.6.3-1.2.5-1.8.6.7-.4 1.2-1 1.5-1.7-.6.4-1.3.7-2 .9-.6-.6-1.5-1-2.4-1-1.8 0-3.2 1.6-2.8 3.3-2.4-.1-4.5-1.3-5.9-3.1-.3.5-.4 1-.4 1.6 0 1.1.6 2.1 1.5 2.7-.5 0-1-.2-1.4-.4v.1c0 1.5 1.1 2.7 2.5 3-.3.1-.7.2-1 .2-.2 0-.5 0-.7-.1.5 1.3 1.8 2.2 3.3 2.2-1.2.9-2.7 1.4-4.2 1.4-.3 0-.6 0-.9-.1 1.5 1 3.3 1.6 5.2 1.6 6.2 0 9.6-5.1 9.6-9.6v-.4c.7-.5 1.2-1.1 1.6-1.7z"
+                fill="white" />
+            </svg>
+          </a>
+          <a href="#" aria-label="LinkedIn" class="footer-social-icon">
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="16" fill="#0077B5" />
+              <path
+                d="M12 13h3v1.2c.4-.7 1.3-1.4 2.6-1.4 2.1 0 2.5 1.2 2.5 2.8V21h-3v-4c0-.7-.1-1.3-1-1.3s-1.1.6-1.1 1.3v4h-3v-7zm-1.5-2c.8 0 1.5-.7 1.5-1.5S11.3 8 10.5 8 9 8.7 9 9.5 9.7 11 10.5 11zm-1.5 2h3v7h-3v-7z"
+                fill="white" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col footer-newsletter-col">
+        <form class="footer-newsletter-form">
+          <input type="email" placeholder="Your email" aria-label="Email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <!-- Added a small image here to fill the empty area -->
+        <img
+          src="https://a.storyblok.com/f/112937/568x400/686f87dc2f/50-things-you-need-to-do-on-your-next-trip_square-568x400.jpg/m/620x0/filters:quality(70)/"
+          alt="Travel illustration" class="footer-illustration">
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <p>© 2024 JetAway. All rights reserved.</p>
+    </div>
+    <div class="footer-address">
+      <p>123 Nile Street, Alexandria, Egypt | +20 100 123 4567 | info@jetaway.com</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
